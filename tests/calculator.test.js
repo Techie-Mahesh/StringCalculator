@@ -34,4 +34,10 @@ describe("String Calculator", () => {
   test("should return the sum of multiple numbers with a custom delimiter", () => {
     expect(calculator.add("//&\n3&2&4")).toBe(9);
   });
+
+  test("should throw an error for negative numbers", () => {
+    expect(() => calculator.add("-1,2,-3")).toThrowError(
+      "Negative numbers not allowed: -1, -3"
+    );
+  });
 });
