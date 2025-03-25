@@ -26,4 +26,12 @@ describe("String Calculator", () => {
   test("should return the sum of multiple comma and newline-seperated numbers", () => {
     expect(calculator.add("1\n2,3")).toBe(6);
   });
+
+  test("should return the sum of multiple numbers with a custom delimiter", () => {
+    expect(calculator.add("//;\n1;2;4")).toBe(7);
+  });
+
+  test("should return the sum of multiple numbers with a custom delimiter", () => {
+    expect(calculator.add("//&\n3&2&4")).toBe(9);
+  });
 });
